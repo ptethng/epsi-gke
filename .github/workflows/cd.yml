@@ -7,7 +7,7 @@ on:
   pull_request: ~
 
 env:
-  GKE_CLUSTER: epsi-test
+  GKE_CLUSTER: cluster-1
   GCE_ZONE: europe-west1-c
   PREFIX_NAME: ''
 
@@ -191,13 +191,13 @@ jobs:
         id: prepare
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
-            echo "::set-output name=host::pr-${{ github.event.number }}-demo.api-platform.com"
-            echo "::set-output name=cors::^https?://pr-${{ github.event.number }}-demo\\.api-platform\\.com$"
+            echo "::set-output name=host::pr-${{ github.event.number }}-demo.gambas.fun"
+            echo "::set-output name=cors::^https?://pr-${{ github.event.number }}-demo\\.gambas\\.fun$"
             echo "::set-output name=release::pr-${{ github.event.number }}"
             echo "::set-output name=namespace::pr-${{ github.event.number }}"
           else
-            echo "::set-output name=host::demo.api-platform.com"
-            echo "::set-output name=cors::^https?://demo\\.api-platform\\.com$"
+            echo "::set-output name=host::demo.gambas.fun"
+            echo "::set-output name=cors::^https?://demo\\.gambas\\.fun$"
             echo "::set-output name=release::main"
             echo "::set-output name=namespace::main"
           fi
