@@ -191,8 +191,8 @@ jobs:
         id: prepare
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
-            echo "::set-output name=host::pr-${{ github.event.number }}-demo.gambas.fun"
-            echo "::set-output name=cors::^https?://pr-${{ github.event.number }}-demo\\.gambas\\.fun$"
+            echo "::set-output name=host::pr-${{ github.event.number }}-demo.thegambas.com"
+            echo "::set-output name=cors::^https?://pr-${{ github.event.number }}-demo\\.thegambas\\.com$"
             echo "::set-output name=release::pr-${{ github.event.number }}"
             echo "::set-output name=namespace::pr-${{ github.event.number }}"
           else
