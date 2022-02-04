@@ -226,6 +226,7 @@ jobs:
             --set=pwa.image.repository=eu.gcr.io/${{ secrets.GKE_PROJECT }}/pwa \
             --set=pwa.image.tag=${{ needs.build-pwa.outputs.version }} \
             --set=pwa.image.pullPolicy=Always \
+            --set=ingress.enabled=true \
             --set=ingress.hosts[0].host=${{ steps.prepare.outputs.host }} \
             --set=ingress.hosts[0].paths[0].path=/* \
             --set=ingress.hosts[0].paths[0].pathType=ImplementationSpecific \
